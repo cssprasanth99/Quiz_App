@@ -1,0 +1,218 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;600;700;800&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+.question_page.activequestion,
+.quiz_result.activequizpage {
+  z-index: 5;
+  opacity: 1;
+}
+.Userdetails {
+  position: absolute;
+  align-items: center;
+  left: 550px;
+  padding: 20px;
+  margin: 20px auto;
+  text-align: center;
+  border-radius: 10px;
+  border: solid skyblue 2px;
+  font-family: "Nunito", sans-serif;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 2);
+  opacity: 1;
+}
+.Userdetails.inactivedisplay {
+  display: none;
+}
+
+/* .active_main,
+.Userdetails,
+.quiz-result {
+  display: none;
+} */
+
+.image {
+  padding: 50px 50px 10px 50px;
+}
+.Userdetails h1 {
+  padding: 20px;
+  color: #77c8e8;
+  font-weight: 600;
+}
+h3 {
+  padding: 20px;
+  font-style: normal;
+}
+.input_btn {
+  width: 60%;
+  border: solid#77c8e8 2px;
+  border-radius: 5px;
+  padding: 5px;
+}
+.enter_btn {
+  padding: 5px 12px;
+  background-color: #6464ab;
+  border: none;
+  color: white;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.Category h1 {
+  color: #77c8e8;
+  font-weight: 700;
+}
+.topics1,
+.topics2,
+.options {
+  display: flex;
+}
+
+.pipes_cisterns,
+.profit_loss,
+.probability,
+.problemsonages,
+.start_again,
+.goto_home {
+  flex: 1;
+  margin: 10px 10px;
+  padding: 10px 0px;
+  border: solid skyblue 2px;
+  border-radius: 40px;
+  background-color: #3fbef0;
+  color: white;
+  font-family: "Nunito", sans-serif;
+  cursor: pointer;
+}
+
+.option_list {
+  padding: 20px 0px;
+  display: block;
+}
+.option_list .option {
+  width: 100%;
+  text-align: center;
+  margin: 10px 10px;
+  padding: 5px 200px;
+  border: solid skyblue 2px;
+  border-radius: 40px;
+  background-color: white;
+  color: #3fbef0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.option_btn {
+  /* flex: 1; */
+  margin: 10px 10px;
+  padding: 5px 0px;
+  border: solid skyblue 2px;
+  border-radius: 40px;
+  background-color: white;
+  color: #3fbef0;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+}
+.option:hover {
+  background-color: #1faee7;
+  color: white;
+  border: none;
+}
+.option_list .option.correct {
+  color: #094818;
+  background: #4bde6d;
+  border: 1px solid #c3e6cb;
+}
+.option_list .option.incorrect {
+  color: #721c24;
+  background: #ea737d;
+  border: 1px solid #f5c6cb;
+}
+.option_list .option.disabled {
+  pointer-events: none;
+}
+
+.question_page {
+  width: 500px;
+  /* height: 600px; */
+  position: absolute;
+  left: 472px;
+  padding: 20px;
+  margin: 20px 80px;
+  text-align: center;
+  border: solid 2px skyblue;
+  border-radius: 10px;
+  background-color: white;
+  font-family: "Nunito", sans-serif;
+  opacity: 0;
+}
+.header {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.timer {
+  border: 1px solid grey;
+  border-radius: 50%;
+  padding: 2px;
+  color: skyblue;
+  margin: 10px;
+  font-weight: 700;
+}
+
+.question_no {
+  position: absolute;
+  display: inline-block;
+  left: 230px;
+  top: 105px;
+  border: 1px solid grey;
+  border-radius: 50%;
+  padding: 2px;
+  color: skyblue;
+  font-weight: 700;
+  object-fit: fill;
+  background-color: white;
+  z-index: 1;
+}
+.question {
+  position: relative;
+  border: 2px solid skyblue;
+  border-radius: 5px;
+  padding: 10px;
+}
+.next_btn {
+  display: none;
+  margin: 10px 134px;
+  padding: 10px 50px;
+  border: none;
+  border-radius: 40px;
+  background-color: #1faee7;
+  color: white;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+}
+.quiz_result {
+  position: absolute;
+  left: 550px;
+  padding: 20px;
+  margin: 20px auto;
+  text-align: center;
+  border: solid 2px skyblue;
+  border-radius: 10px;
+  font-family: "Nunito", sans-serif;
+  opacity: 0;
+}
+.result,
+.correct_result,
+.wrong_result,
+.percentage {
+  padding: 20px;
+  color: #77c8e8;
+  font-weight: 700;
+}

@@ -10,6 +10,19 @@ const question_page = document.querySelector(".question_page");
 const Userdetails = document.querySelector(".Userdetails");
 const option_list = document.querySelector(".option_list");
 const timeCount = document.querySelector(".timer");
+const resultPage = document.querySelector(".quiz_result");
+
+let que_count = 0;
+let que_numb = 1;
+let counter;
+let timeValue = 15;
+let userScore = 0;
+let timeTaken = 0;
+
+let userName = "";
+enter_btn.onclick = () => {
+  userName = input_btn.value;
+};
 
 //if category button is click
 pipes_cisterns.onclick = () => {
@@ -31,11 +44,6 @@ profit_loss.onclick = () => {
   question_page.classList.add("activequestion");
   Userdetails.classList.add("inactivedisplay");
 };
-let que_count = 0;
-let que_numb = 1;
-let counter;
-let timeValue = 15;
-let userScore = 0;
 
 const next_btn = document.querySelector(".next_btn");
 const quiz_result = document.querySelector(".quiz_result");
@@ -44,13 +52,16 @@ const goto_home = document.querySelector(".goto_home");
 
 start_again.onclick = () => {
   Userdetails.classList.add("inactivedisplay");
-  quiz_result.classList.remove("activequizpage");
+  quiz_result.classList.remove("activeresult");
   question_page.classList.add("activequestion");
-  let que_count = 0;
-  let que_numb = 1;
-  let counter;
-  let timeValue = 15;
-  let userScore = 0;
+  que_count = 0;
+  que_numb = 1;
+  counter;
+  timeTaken = 0;
+  timeValue = 15;
+  userScore = 0;
+  setTextValue(".display_score", userScore);
+  clearOption();
   showQuestions(que_count);
   queCounter(que_numb);
   clearInterval(counter);
@@ -78,10 +89,11 @@ next_btn.onclick = () => {
   }
 };
 function clearOption() {
-  let option_list = document.querySelectorAll(".option_list");
+  let options = document.querySelectorAll(".option");
   for (let i = 0; i < 4; i++) {
-    option_list.children[i].classList.remove("correct");
-    option_list.children[i].classList.remove("incorrect");
+    options[i].classList.remove("correct");
+    options[i].classList.remove("incorrect");
+    options[i].classList.remove("disabled");
   }
 }
 //getting questions and options from array
@@ -122,9 +134,11 @@ function optionSelected(answer) {
   let userAns = answer.textContent;
   let correctAns = questions[que_count].answer;
   let allOptions = option_list.children.length;
+  countTimeTaken(timeCount);
 
   if (userAns == correctAns) {
     userScore += 1;
+    setTextValue(".display_score", userScore);
     console.log(userScore);
     answer.classList.add("correct");
     console.log("Answer is Correct");
@@ -149,7 +163,9 @@ function optionSelected(answer) {
 function showResultBox() {
   question_page.classList.remove("activequestion"); // show the question page
   Userdetails.classList.add("inactivedisplay"); // hide main page
-  quiz_result.classList.add("activequizpage"); // show the quiz result page
+  quiz_result.classList.add("activeresult"); // show the quiz result page
+  setTextValue(".user_name", userName);
+  setTextValue(".result_time_value", timeTaken);
   const correct_scoreText = document.querySelector(".correct_result");
   let correct_scoreTag = "<span><p>Correct:" + userScore + "</p></span>";
   correct_scoreText.innerHTML = correct_scoreTag;
@@ -174,6 +190,7 @@ function startTimer(time) {
     if (time < 0) {
       clearInterval(counter);
       timeCount.textContent = "00";
+      timeTaken = timeTaken + 15;
 
       let correctAns = questions[que_count].answer;
       let allOptions = option_list.children.length;
@@ -194,4 +211,14 @@ function queCounter(index) {
   const top_ques_counter = document.querySelector(".question_no");
   let question_noTag = "<p>" + index + "/10</p>";
   top_ques_counter.innerHTML = question_noTag;
+}
+
+function setTextValue(setClassAttribute, setValue) {
+  const displayScore = document.querySelector(setClassAttribute);
+  displayScore.textContent = setValue;
+}
+
+function countTimeTaken(timeCount) {
+  timeLeftPerQuestion = timeCount.textContent;
+  timeTaken = timeTaken + (15 - Number.parseInt(timeLeftPerQuestion));
 }

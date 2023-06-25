@@ -4,10 +4,11 @@
   padding: 0px;
   box-sizing: border-box;
 }
-.question_page.activequestion,
-.quiz_result.activequizpage {
-  z-index: 5;
-  opacity: 1;
+.question_page.inactivequestion {
+  display: none;
+}
+.question_page.activequestion {
+  display: block;
 }
 .Userdetails {
   position: absolute;
@@ -20,7 +21,6 @@
   border: solid skyblue 2px;
   font-family: "Nunito", sans-serif;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 2);
-  opacity: 1;
 }
 .Userdetails.inactivedisplay {
   display: none;
@@ -148,7 +148,7 @@ h3 {
   border-radius: 10px;
   background-color: white;
   font-family: "Nunito", sans-serif;
-  opacity: 0;
+  display: none;
 }
 .header {
   padding: 10px;
@@ -206,8 +206,13 @@ h3 {
   border: solid 2px skyblue;
   border-radius: 10px;
   font-family: "Nunito", sans-serif;
-  opacity: 0;
+  display: none;
 }
+
+.quiz_result.activeresult {
+  display: block;
+}
+
 .result,
 .correct_result,
 .wrong_result,

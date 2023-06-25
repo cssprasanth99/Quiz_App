@@ -1,170 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quiz App</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!--Main Page-->
-    <div class="Userdetails">
-      <img src="./images/logo.jpg" alt="image" class="image" />
-      <h1>Hello user!</h1>
-      <h3>Enter your name to continue the Quiz</h3>
-      <input type="text" placeholder="ENTER YOUR NAME" class="input_btn" />
-      <button type="button" class="enter_btn">ENTER</button>
-      <h3>You'll have 10 seconds to answer each question</h3>
-      <hr style="border: 1px solid skyblue" />
-      <div class="Category">
-        <h1>Select Category</h1>
-        <div class="choice_btn">
-          <div class="topics1">
-            <button class="pipes_cisterns">Pipes And Cisterns</button>
-            <button class="probability">Probability</button>
-          </div>
-          <div class="topics2">
-            <button class="problemsonages">Problems on Ages</button>
-            <button class="profit_loss">Profit And Loss</button>
-          </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!--Main Page-->
+  <div class="Userdetails">
+    <img src="./images/logo.jpg" alt="image" class="image" />
+    <h1>Hello user!</h1>
+    <h3>Enter your name to continue the Quiz</h3>
+    <input type="text" placeholder="ENTER YOUR NAME" class="input_btn" />
+    <button type="button" class="enter_btn">ENTER</button>
+    <h3>You'll have 10 seconds to answer each question</h3>
+    <hr style="border: 1px solid skyblue" />
+    <div class="Category">
+      <h1>Select Category</h1>
+      <div class="choice_btn">
+        <div class="topics1">
+          <button class="pipes_cisterns">Pipes And Cisterns</button>
+          <button class="probability">Probability</button>
+        </div>
+        <div class="topics2">
+          <button class="problemsonages">Problems on Ages</button>
+          <button class="profit_loss">Profit And Loss</button>
         </div>
       </div>
     </div>
-    <!--Question Page-->
-    <!--Pipes and Cisterns-->
-    <div class="question_page">
-      <h2>Pipes and Cisterns</h2>
-      <div class="header">
-        <div class="timer"><!--<p>10--></p></div>
-        <div class="score"><p>SCORE:1</p></div>
+  </div>
+  <!--Question Page-->
+  <!--Pipes and Cisterns-->
+  <div class="question_page">
+    <h2>Pipes and Cisterns</h2>
+    <div class="header">
+      <div class="timer">
+        <!--<p>10-->
+        </p>
       </div>
-      <div class="question_no"><!--<p>4/10</p>--></div>
-      <div class="question">
-        <!-- <span>
+      <div class="score">
+        <p>SCORE: <span class="display_score">0</span></p>
+      </div>
+    </div>
+    <div class="question_no">
+      <!--<p>4/10</p>-->
+    </div>
+    <div class="question">
+      <!-- <span>
           It takes 6 hours for three pipes, X, Y and Z to fill a tank. When the
           three worked together for 2 hours, Z was closed and, X and Y filled
           the remaining tank in 7 hours. How many hours would it take Z alone to
           fill the tank?
         </span> -->
-      </div>
-      <div class="option_list">
-        <button class="option"></button>
-        <button class="option"></button>
-        <button class="option"></button>
-        <button class="option"></button>
-      </div>
-      <button class="next_btn">Next Question</button>
     </div>
+    <div class="option_list">
+      <button class="option"><span></span></button>
+      <button class="option"><span></span></button>
+      <button class="option"><span></span></button>
+      <button class="option"><span></span></button>
+    </div>
+    <button class="next_btn">Next Question</button>
+  </div>
 
-    <!--Probability-->
-    <div class="question_page">
-      <h2>Pipes and Cisterns</h2>
-      <div class="header">
-        <div class="timer"><p>220</p></div>
-        <div class="score"><p>SCORE:1</p></div>
+  <!--Probability-->
+  <div class="question_page">
+    <h2>Pipes and Cisterns</h2>
+    <div class="header">
+      <div class="timer">
+        <p>220</p>
       </div>
-      <div class="question_no"><p>4/10</p></div>
-      <div class="question">
-        <p>
-          It takes 6 hours for three pipes, X, Y and Z to fill a tank. When the
-          three worked together for 2 hours, Z was closed and, X and Y filled
-          the remaining tank in 7 hours. How many hours would it take Z alone to
-          fill the tank?
-        </p>
-      </div>
-      <div class="choice_btn">
-        <div class="options">
-          <button class="option_btn">15 HRS</button>
-          <button class="option_btn">23 HRS</button>
-        </div>
-        <div class="options">
-          <button class="option_btn">12 HRS</button>
-          <button class="option_btn">14 HRS</button>
-        </div>
-      </div>
-      <button class="next_btn">Next Question</button>
-    </div>
-    <!--Problems on Ages-->
-    <div class="question_page">
-      <h2>Pipes and Cisterns</h2>
-      <div class="header">
-        <div class="timer"><p>220</p></div>
-        <div class="score"><p>SCORE:1</p></div>
-      </div>
-      <div class="question_no"><p>4/10</p></div>
-      <div class="question">
-        <p>
-          It takes 6 hours for three pipes, X, Y and Z to fill a tank. When the
-          three worked together for 2 hours, Z was closed and, X and Y filled
-          the remaining tank in 7 hours. How many hours would it take Z alone to
-          fill the tank?
-        </p>
-      </div>
-      <div class="choice_btn">
-        <div class="options">
-          <button class="option_btn">15 HRS</button>
-          <button class="option_btn">23 HRS</button>
-        </div>
-        <div class="options">
-          <button class="option_btn">12 HRS</button>
-          <button class="option_btn">14 HRS</button>
-        </div>
-      </div>
-      <button class="next_btn">Next Question</button>
-    </div>
-    <!--Profit And Loss-->
-    <div class="question_page">
-      <h2>Pipes and Cisterns</h2>
-      <div class="header">
-        <div class="timer"><p>220</p></div>
-        <div class="score"><p>SCORE:1</p></div>
-      </div>
-      <div class="question_no"><p>4/10</p></div>
-      <div class="question">
-        <p>
-          It takes 6 hours for three pipes, X, Y and Z to fill a tank. When the
-          three worked together for 2 hours, Z was closed and, X and Y filled
-          the remaining tank in 7 hours. How many hours would it take Z alone to
-          fill the tank?
-        </p>
-      </div>
-      <div class="choice_btn">
-        <div class="options">
-          <button class="option_btn">15 HRS</button>
-          <button class="option_btn">23 HRS</button>
-        </div>
-        <div class="options">
-          <button class="option_btn">12 HRS</button>
-          <button class="option_btn">14 HRS</button>
-        </div>
-      </div>
-      <button class="next_btn">Next Question</button>
-    </div>
-    <!--Quiz Result-->
-    <div class="quiz_result">
-      <h1>Quiz Result</h1>
-      <div class="result">
-        <span class="result-value">XXXX</span> your result is:
-      </div>
-      <div class="result">
-        Total Time Taken: <span class="result-value">110</span>seconds
-      </div>
-      <div class="result">
-        Total Question: <span style="color: black;">10</span>
-      </div>
-      <div class="result">Attempt: <span class="result-value">10</span></div>
-      <div class="correct_result"> <!--<span class="correct_score">3</span>--></div>
-      <div class="wrong_result"><!--Wrong: <span class="result-value">7</span>--></div>
-      <div class="percentage"><!--Percentage: <span class="result-value">30.00%</span>--></div>
-      <div class="choice_btn">
-        <div class="topics1">
-          <button class="start_again">Start Again</button>
-          <button class="goto_home">Go To Home</button>
-        </div>
+      <div class="score">
+        <p>SCORE: <span class="display_score">0</span></p>
       </div>
     </div>
+    <div class="question_no">
+      <p>4/10</p>
+    </div>
+    <div class="question">
+      <p>
+        It takes 6 hours for three pipes, X, Y and Z to fill a tank. When the
+        three worked together for 2 hours, Z was closed and, X and Y filled
+        the remaining tank in 7 hours. How many hours would it take Z alone to
+        fill the tank?
+      </p>
+    </div>
+    <div class="choice_btn">
+      <div class="options">
+        <button class="option_btn">15 HRS</button>
+        <button class="option_btn">23 HRS</button>
+      </div>
+      <div class="options">
+        <button class="option_btn">12 HRS</button>
+        <button class="option_btn">14 HRS</button>
+      </div>
+    </div>
+    <button class="next_btn">Next Question</button>
+  </div>
+  <!--Problems on Ages-->
+  <div class="question_page">
+    <h2>Pipes and Cisterns</h2>
+    <div class="header">
+      <div class="timer">
+        <p>220</p>
+      </div>
+      <div class="score">
+        <p>SCORE: <span class="display_score">0</span></p>
+      </div>
+    </div>
+    <div class="question_no">
+      <p>4/10</p>
+    </div>
+    <div class="question">
+      <p>
+        It takes 6 hours for three pipes, X, Y and Z to fill a tank. When the
+        three worked together for 2 hours, Z was closed and, X and Y filled
+        the remaining tank in 7 hours. How many hours would it take Z alone to
+        fill the tank?
+      </p>
+    </div>
+    <div class="choice_btn">
+      <div class="options">
+        <button class="option_btn">15 HRS</button>
+        <button class="option_btn">23 HRS</button>
+      </div>
+      <div class="options">
+        <button class="option_btn">12 HRS</button>
+        <button class="option_btn">14 HRS</button>
+      </div>
+    </div>
+    <button class="next_btn">Next Question</button>
+  </div>
+  <!--Profit And Loss-->
+  <div class="question_page">
+    <h2>Pipes and Cisterns</h2>
+    <div class="header">
+      <div class="timer">
+        <p>220</p>
+      </div>
+      <div class="score">
+        <p>SCORE: <span class="display_score">0</span></p>
+      </div>
+    </div>
+    <div class="question_no">
+      <p>4/10</p>
+    </div>
+    <div class="question">
+      <p>
+        It takes 6 hours for three pipes, X, Y and Z to fill a tank. When the
+        three worked together for 2 hours, Z was closed and, X and Y filled
+        the remaining tank in 7 hours. How many hours would it take Z alone to
+        fill the tank?
+      </p>
+    </div>
+    <div class="choice_btn">
+      <div class="options">
+        <button class="option_btn">15 HRS</button>
+        <button class="option_btn">23 HRS</button>
+      </div>
+      <div class="options">
+        <button class="option_btn">12 HRS</button>
+        <button class="option_btn">14 HRS</button>
+      </div>
+    </div>
+    <button class="next_btn">Next Question</button>
+  </div>
+  <!--Quiz Result-->
+  <div class="quiz_result">
+    <h1>Quiz Result</h1>
+    <div class="result">
+      <span class="user_name"></span> your result is:
+    </div>
+    <div class="result">
+      Total Time Taken: <span class="result_time_value"></span> seconds
+    </div>
+    <div class="result">
+      Total Question: <span style="color: black;">10</span>
+    </div>
+    <div class="result">Attempt: <span class="result-value">10</span></div>
+    <div class="correct_result">
+      <!--<span class="correct_score">3</span>-->
+    </div>
+    <div class="wrong_result">
+      <!--Wrong: <span class="result-value">7</span>-->
+    </div>
+    <div class="percentage">
+      <!--Percentage: <span class="result-value">30.00%</span>-->
+    </div>
+    <div class="choice_btn">
+      <div class="topics1">
+        <button class="start_again">Start Again</button>
+        <button class="goto_home">Go To Home</button>
+      </div>
+    </div>
+  </div>
 
-    <script src="js/script.js"></script>
-    <script src="js/questions.js"></script>
-  </body>
+  <script src="script.js"></script>
+  <script src="questions.js"></script>
+</body>
+
 </html>

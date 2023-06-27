@@ -18,6 +18,7 @@ let counter;
 let timeValue = 15;
 let userScore = 0;
 let timeTaken = 0;
+let attempted = 0;
 
 let userName = "";
 enter_btn.onclick = () => {
@@ -60,6 +61,7 @@ start_again.onclick = () => {
   timeTaken = 0;
   timeValue = 15;
   userScore = 0;
+  attempted = 0;
   setTextValue(".display_score", userScore);
   clearOption();
   showQuestions(que_count);
@@ -131,6 +133,7 @@ function showQuestions(index) {
 }
 function optionSelected(answer) {
   clearInterval(counter);
+  attempted += 1;
   let userAns = answer.textContent;
   let correctAns = questions[que_count].answer;
   let allOptions = option_list.children.length;
@@ -176,6 +179,7 @@ function showResultBox() {
   let percentage_scoreTag =
     "<span><p>Percentage:" + userScore * 10 + "%</p></span>";
   percentage_scoreText.innerHTML = percentage_scoreTag;
+  setTextValue(".result_attempted", attempted);
 }
 
 function startTimer(time) {
